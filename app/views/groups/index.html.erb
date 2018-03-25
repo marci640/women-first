@@ -1,0 +1,49 @@
+
+<section class="portfolio section">
+  <div class="container-fluid">
+    <div class="top-side">
+      <h2 class="title">Women's Hub</h2>
+    </div>
+
+<div id="app">
+
+    <div class="filters">
+      <ul>
+        <li> <input type="checkbox" v-model="womenFilter"> Women </li>
+        <li> <input type="checkbox" v-model="girlsFilter"> Girls </li>
+        <li> <input type="checkbox" v-model="stemFilter"> STEM </li>
+        <li> <input type="checkbox" v-model="healthFilter"> Health </li>
+        <li> <input type="checkbox" v-model="safeFilter"> Safety </li>
+        <li> <input type="checkbox" v-model="bayareaFilter"> Bay Area </li>
+        <li> <input type="checkbox" v-model="forProfitFilter"> For-Profit </li>
+        <li> <input type="checkbox" v-model="nonProfitFilter"> Non-Profit </li>
+        <li> <input type="checkbox" v-model="professionalDevelopmentFilter"> Professional Development </li>
+        <li> <input type="checkbox" v-model="entrepreneurshipFilter"> Entrepreneurship </li>
+        <li> <input type="checkbox" v-model="politicalEngagementFilter"> Political Engagement </li>
+        <li> <input type="checkbox" v-model="lgbtqFilter"> LGBTQ </li>
+        <li> <input type="checkbox" v-model="mentoringFilter"> Mentoring </li>
+        <li> <input type="checkbox" v-model="techFilter"> Tech </li>
+      </ul>
+    </div>
+
+
+    <br>
+    <div class="row">
+      <div v-for="group in groups" v-if="filter(group)" >
+        <div class="col-sm-auto">
+          <div class="card card-body" style="width: 30rem;">
+            <img class="group-image" v-bind:src="group.photo_url">
+            <h5> {{ group.company_name }} </h5>
+            <p> {{ group.city}} </p>
+
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+  </div>
+</section>
+
+
